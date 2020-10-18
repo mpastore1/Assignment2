@@ -1,0 +1,28 @@
+{
+    "components": [
+{
+    "_id" : "5f7e2838b205f39a66629023",
+    "name" : "Factfulness",
+    "author" : "Hans Rosling",
+    "published" : "1965",
+    "description" : "He demonstrates that his test subjects believe the world is poorer, less healthy, and more dangerous than it actually is, attributing this not to random chance but to misinformation.[1][2] Rosling recommends thinking about the world as divided into four levels based on income brackets (rather than the prototypical developed/developing framework) and suggests ten instincts that prevent us from seeing real progress in the worldHe demonstrates that his test subjects believe the world is poorer, less healthy, and more dangerous than it actually is, attributing this not to random chance but to misinformation. Rosling recommends thinking about the world as divided into four levels based on income brackets (rather than the prototypical developed/developing framework) and suggests ten instincts that prevent us from seeing real progress in the world",
+    "price" : 10
+},
+{
+    "_id" : "5f7e2a87b205f39a66629025",
+    "name" : "The Choice",
+    "author" : "Dr. Edith Eger",
+    "published" : "2017",
+    "description" : "It’s 1944 and sixteen-year-old ballerina and gymnast Edith Eger is sent to Auschwitz. Separated from her parents on arrival, she endures unimaginable experiences, including being made to dance for the infamous Josef Mengele. When the camp is finally liberated, she is pulled from a pile of bodies, barely alive. The horrors of the Holocaust didn’t break Edith. In fact, they helped her learn to live again with a life-affirming strength and a truly remarkable resilience. The Choice is her unforgettable story",
+    "price" : 50
+},
+{
+    "_id" : "5f7e3133b205f39a66629026",
+    "name" : "indistractable",
+    "author" : "Nir Eyal",
+    "published" : "2019",
+    "description" : "Ever get the feeling the world is full of too many distractions? Research shows the ability to stay focused is a competitive advantage, in work and in life. However, in an age of ever-increasing demands on our attention, how do we get the best from technology without letting it get the best of us?",
+    "price" : 30
+}
+    ]
+}
