@@ -6,7 +6,7 @@ Date 10/6/2020 */
  * Module dependencies.
  */
 
-var app = require('./config/app');
+var app = require('./server/config/app');
 var debug = require('debug')('generator:server');
 var http = require('http');
 
