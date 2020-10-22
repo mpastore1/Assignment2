@@ -51,6 +51,15 @@
         </li>
 
 
+        <% if(title == "About"){ %>
+          <li class="nav-item active">
+      <% } else { %>
+        <li class= "nav-item">
+     <% } %>
+          <a class="nav-link text-success" href="/about"  > <i  class="fas fa-address-card"></i> About</a>
+        </li>
+
+
 
        <% if(title == "Contact"){ %>
           <li class="nav-item active">
@@ -59,6 +68,8 @@
      <% } %>
           <a class="nav-link text-success" href="/contact"> <i class="fas fa-phone"></i> Contact </a>
         </li>
+
+
 
 
     </div>

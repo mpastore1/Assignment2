@@ -15,9 +15,10 @@ module.exports.displayAboutPage = (req, res, next) => {
     res.render('index', { title: 'About'});
 }
 
-module.exports.displayProductsPage = (req, res, next) => {
-    res.render('index', { title: 'Products'});
+module.exports.displayProjectsPage = (req, res, next) => {
+    res.render('index', { title: 'Projects'});
 }
+
 
 module.exports.displayServicesPage = (req, res, next) => {
     res.render('index', { title: 'Services'});
@@ -84,16 +85,17 @@ module.exports.displayRegisterPage = (req,res,next) =>{
 module.exports.processRegisterPage = (req,res,next) => {
 let newUser = new User({
     username: req.body.username,
-    passwrod: req.body.passwrod,
+    password: req.body.password,
     email: req.body.email,
     displayName: req.body.displayName
 
 })
 
-User.register(newUser,req.body.passwrod, (user) => {
+User.register(newUser, req.body.password, (err) => {
     if(err){
-        console.log("Error: ")
+        console.log(err);
         if(err.name == "UserExsistsError"){
+            console.log("Error: ")
             req.flash(
                 'registerMessage',
                 'Registration Error: User Already Exists!'

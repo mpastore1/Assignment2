@@ -5,7 +5,7 @@
 
 <main class="container">
 <!--  -->
-<& if(messages.length > 0) {%>
+<% if(messages.length > 0) {%>
 <div class="alert alert-danger">
     <%= messages %>
  </div>
@@ -38,7 +38,7 @@
                
                
                <fieldset class="form-group">
-                <label for="Display Name">Name: </label>
+                <label for="Display Name">Display Name: </label>
                 <input type="displayName" class="form-control" name = "displayName"
                 placeholder="Enter Name" id="displayName" required >
 
@@ -47,12 +47,12 @@
 
             
 
-            <feildset class="form-group text-right">
+            <fieldset class="form-group text-right">
                 <input type="submit" class="btn btn-success" value="Register">
-            <a href="/" class="btn btn-warning">
+            <a href="/">
             <input type="button" class="btn btn-warning" value='Cancel'>
             </a>
-            </feildset>
+            </fieldset>
 
         </form>
     </div>

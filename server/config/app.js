@@ -34,7 +34,7 @@ mongoDB.once('open', ()=>{
 let indexRouter = require('../routes/index');// you
 let usersRouter = require('../routes/users');// others
 let booksRouter = require('../routes/book');
-const { Passport } = require('passport');
+//const { Passport } = require('passport');
 let app = express();
 
 // view engine setup
@@ -67,6 +67,9 @@ app.use(passport.session());
 let userModel = require('../models/user');
 let User = userModel.User;
 
+passport.use(User.createStrategy());
+
+
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
@@ -87,7 +90,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {title: 'Error'});
 });
 
 module.exports = app;

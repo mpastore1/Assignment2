@@ -5,7 +5,7 @@
 
 <main class="container">
 <!--  -->
-<& if(messages.length > 0) {%>
+<% if(messages.length > 0) {%>
 <div class="alert alert-danger">
     <%= messages %>
  </div>
@@ -15,8 +15,9 @@
 <div class="row">
     <div class="offset-md-4 col-md-4">
         <h1>please Login</h1>
-        <form action="" method="POST" autocomplete="off">
-            <fieldset class="form-group"><label for="username">UserName: </label>
+        <form  method="POST" autocomplete="off">
+            <fieldset class="form-group">
+            <label for="username">UserName: </label>
                 <input type="text" class="form-control" name = "username"
                 placeholder="Enter Username" id="username" required autofocus>
             </fieldset>
@@ -29,12 +30,12 @@
                 <a href="/register" >Register Here</a>
             </fieldset>
         
-            <feildset class="form-group text-right">
+            <fieldset class="form-group text-right">
                 <input type="submit" class="btn btn-success" value="Login">
             <a href="/" class="btn btn-warning">
             <input type="button" class="btn btn-warning" value='Cancel'>
             </a>
-            </feildset>
+            </fieldset>
 
         </form>
     </div>

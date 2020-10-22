@@ -9,19 +9,21 @@ let User = mongoose.Schema({
         trim: true,
         required: "username is important"
     },
+    
     password:{
         type: String,
         default: "",
         trim: true,
         required: "Password is important"
     },
+    
     email:{
         type: String,
         default: "",
         trim: true,
         required: "email is important"
     },
-    displayname:{
+    displayName:{
         type: String,
         default: "",
         trim: true,
@@ -38,7 +40,7 @@ let User = mongoose.Schema({
     }
 },
 {
-    collection : 'user'
+    collection : 'users'
 }
 );
 
