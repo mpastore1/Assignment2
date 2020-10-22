@@ -1,6 +1,3 @@
-/*Marco Pastore
-Student number: 301101814
-Date 10/6/2020 */
 var express = require('express');
 var router = express.Router();
 

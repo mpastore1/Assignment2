@@ -8,6 +8,17 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+// moduals for authentication 
+
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal;
+let flash = require('connect-flash');
+
+
+
+
 //database setup
 let mongoose = require('mongoose');
 let DB = require('./db');
@@ -23,6 +34,7 @@ mongoDB.once('open', ()=>{
 let indexRouter = require('../routes/index');// you
 let usersRouter = require('../routes/users');// others
 let booksRouter = require('../routes/book');
+const { Passport } = require('passport');
 let app = express();
 
 // view engine setup
@@ -35,6 +47,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname,'../../node_modules')))
+
+// set up express-session
+
+app.use(session({
+  secret: "someSecret",
+  saveUninitialized : false,
+  resave: false
+}));
+
+
+//flash
+
+app.use(flash())
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+let userModel = require('../models/user');
+let User = userModel.User;
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/book-list',booksRouter);

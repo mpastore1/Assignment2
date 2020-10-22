@@ -1,36 +1,34 @@
-/*Marco Pastore
-Student number: 301101814
-Date 10/6/2020 */
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+
+let indexController = require('../controllers/index');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home'});
-});
+router.get('/', indexController.displayHomePage);
 
-router.get('/home', function(req, res, next) {
-  res.render('index', { title: 'Home'});
-});
+/* GET home page. */
+router.get('/home', indexController.displayHomePage);
 
-// About
-router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About'});
-});
-//Product
-router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'Projects'});
-});
+/* GET About Us page. */
+router.get('/about', indexController.displayAboutPage);
 
-// services
-router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services'});
-});
+/* GET Products page. */
+router.get('/products', indexController.displayProductsPage);
 
-// contact
-router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact'});
-});
+/* GET Services page. */
+router.get('/services', indexController.displayServicesPage);
 
+/* GET Contact Us page. */
+router.get('/contact', indexController.displayContactPage);
+// --------------------------------------------------------------------
+router.get('/login', indexController.displayLoginPage);
+
+router.post('/login', indexController.processLoginPage);
+
+router.get('/register', indexController.displayRegisterPage);
+
+router.post('/register', indexController.processRegisterPage);
+
+router.get('/logout', indexController.performLogout);
 
 module.exports = router;
