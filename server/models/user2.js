@@ -4,15 +4,16 @@ Date 10/25/2020 */
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
 
-let User = mongoose.Schema({
 
-    username:{
+let user2 = mongoose.Schema({
+
+    name:{
         type: String,
         default: "",
         trim: true,
         required: "Name is important"
     },
-    password:{
+    PhoneNumber:{
         type: String,
         default: "",
         trim: true,
@@ -24,23 +25,14 @@ let User = mongoose.Schema({
         trim: true,
         required: "email is important"
     },
-    displayname:{
-        type: String,
-        default: "",
-        trim: true,
-        required: "displayName is important"
-    }
 
 
 },{
     collection : 'people'
 })
-
-
-// configure options 
-
 let options = ({missingPasswordError: "Wrong/ missing password"});
 
-User.plugin(passportLocalMongoose, options);
+user2.plugin(passportLocalMongoose, options);
 
-module.exports.User = mongoose.model('User',User);
+module.exports.user2 = mongoose.model('user2',user2);
+

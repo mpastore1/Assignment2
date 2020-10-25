@@ -1,0 +1,60 @@
+<% include ../partials/header.ejs %>
+
+
+<% include ../partials/main_nav.ejs %>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-2 col-md-8">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <lable for="nameTextField">Name</lable>
+                    <input type="text" class="form-control"
+                    id = "nameTextField"
+                    placeholder="Enter the name"
+                    name="name"
+                    value ="<%= contact.name %>"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <lable for="AuthorTextFeild">Phone</lable>
+                    <input type="text" class="form-control"
+                    id = "PhoneNumberTextFeild"
+                    placeholder="Enter the Phone Number"
+                    name="PhoneNumber"
+                     value ="<%= contact.PhoneNumber %>"
+                    required>                    
+                </div>
+
+                <div class="form-group">
+                    <lable for="publishedTextFeilds">Email</lable>
+                    <input type="text" class="form-control"
+                    id = "emailTextFeilds"
+                    placeholder="Email"
+                    name="email"
+                     value ="<%= contact.email %>"
+                    required>                    
+                </div>               
+
+
+                <button class="btn btn-primary" type="submit">                
+                    <i class="fas fa-edit"></i> Submit</button>
+                    
+                    <a href="/contacts" class="btn btn-warning"></a>
+                        <i class="fas fa-undo">Cancel</i></a>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+<% include ../partials/bottom_nav.ejs %>
+
+ <% include ../partials/footer.ejs %>

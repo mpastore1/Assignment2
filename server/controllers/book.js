@@ -1,3 +1,6 @@
+/*Marco Pastore
+Student number: 301101814
+Date 10/25/2020 */
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -15,13 +18,14 @@ module.exports.displayBookList = (req, res, next) => {
         {
             //console.log(BookList);
 
-            res.render('book/list', {title: 'Books', BookList: bookList});      
+            res.render('book/list', {title: 'Books', BookList : bookList});      
+           
         }
     });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('book/add', {title: 'Add Book'})          
+    res.render('contacts/add', {title: 'Add Contact'})          
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -60,7 +64,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('book/edit', {title: 'Edit Book', book: bookToEdit})
+            res.render('/contacts/edit', {title: 'Edit Book', book: bookToEdit})
         }
     });
 }

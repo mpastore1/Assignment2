@@ -1,0 +1,44 @@
+<% include ../partials/header.ejs %>
+
+
+<% include ../partials/main_nav.ejs %>
+
+<h1><%= title %></h1>
+
+<a href="/contacts/add" class="btn btn-primary" role="button">
+<i class="fas fa-plus-circle"></i> Add a Book</a>
+<table class= 'table table-bordered table-striped table-hover'>
+
+<tr>
+        
+            <th class ="text-center col-2">Name</th>
+            <th class ="text-center col-2">Phone Number</th>
+            <th class ="text-center col-1">Email</th>
+            <th class ="text-center col-1">Edit</th>
+          
+                   
+    </tr> 
+
+
+<% for(let count = 0; count < CONTList.length; count++){ %>
+                <tr>
+                    <td class="text-align:left col-1"><%= CONTList[count].name %></td>
+                    <td class="text-align:center col-2"><%= CONTList[count].PhoneNumber %></td>
+                    <td class="text-align:right col-1"><%= CONTList[count].email %></td>
+                   <td class="text-cente col-1">
+                        <a href="/contacts/edit/<%= CONTList[count]._id %>" class="btn btn-primary">
+                        <i class="fas fa-pencil-alt"></i> Edit</a>
+                    </td>
+                   
+                    
+                </tr>
+        <% } %>
+
+
+
+</table>
+
+
+<% include ../partials/bottom_nav.ejs %>
+
+ <% include ../partials/footer.ejs %>

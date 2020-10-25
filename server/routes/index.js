@@ -1,3 +1,6 @@
+/*Marco Pastore
+Student number: 301101814
+Date 10/25/2020 */
 let express = require('express');
 let router = express.Router();
 
@@ -34,5 +37,7 @@ router.get('/register', indexController.displayRegisterPage);
 router.post('/register', indexController.processRegisterPage);
 
 router.get('/logout', indexController.performLogout);
+
+
 
 module.exports = router;

@@ -1,3 +1,6 @@
+/*Marco Pastore
+Student number: 301101814
+Date 10/25/2020 */
 let mongoose = require('mongoose');
 
 let bookModel = mongoose.Schema({

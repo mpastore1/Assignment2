@@ -1,6 +1,6 @@
 /*Marco Pastore
 Student number: 301101814
-Date 10/6/2020 */
+Date 10/25/2020 */
 // installed third party packages 
 let createError = require('http-errors');
 let express = require('express');
@@ -21,6 +21,7 @@ let flash = require('connect-flash');
 
 //database setup
 let mongoose = require('mongoose');
+
 let DB = require('./db');
 
 //poiting mongoose to the db uri
@@ -31,9 +32,13 @@ mongoDB.once('open', ()=>{
   console.log('connected to mongoDB')
 })
 
+
+
 let indexRouter = require('../routes/index');// you
 let usersRouter = require('../routes/users');// others
 let booksRouter = require('../routes/book');
+let ContacsR = require('../routes/contacts');
+
 //const { Passport } = require('passport');
 let app = express();
 
@@ -63,19 +68,23 @@ app.use(flash())
 
 app.use(passport.initialize());
 app.use(passport.session());
-
+let usermodel2 = require('../models/user2');
 let userModel = require('../models/user');
 let User = userModel.User;
-
+let User2 = usermodel2.user2;
 passport.use(User.createStrategy());
-
+passport.use(User2.createStrategy())
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+passport.serializeUser(User2.serializeUser());
+passport.deserializeUser(User2.deserializeUser());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/book-list',booksRouter);
+app.use('/contacts',ContacsR);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
