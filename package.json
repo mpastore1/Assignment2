@@ -1,6 +1,6 @@
 {
-  "name": "generator",
-  "version": "0.0.0",
+  "name": "assignment2",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./server.js"
@@ -35,5 +35,12 @@
     "@types/passport": "^1.0.4",
     "@types/passport-local": "^1.0.33",
     "@types/passport-local-mongoose": "^4.0.13"
-  }
+  },
+  "description": "assignment2",
+  "main": "server.js",
+  "repository":{
+    "type":"git",
+    "url": "https://github.com/mpastore1/Assignment2"
+  } 
+  
 }
